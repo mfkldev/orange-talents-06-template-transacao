@@ -1,12 +1,23 @@
-package br.com.zupacademy.marciosouza.transacao.kafka;
+package br.com.zupacademy.marciosouza.transacao.model;
 
-public class Establishment {
+import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 
+@Embeddable
+public class EstablishmentModel {
+
+    @NotBlank
     private String name;
+    @NotBlank
     private String city;
+    @NotBlank
     private String address;
 
-    public Establishment(String name, String city, String address) {
+    @Deprecated
+    public EstablishmentModel() {
+    }
+
+    public EstablishmentModel(String name, String city, String address) {
         this.name = name;
         this.city = city;
         this.address = address;
